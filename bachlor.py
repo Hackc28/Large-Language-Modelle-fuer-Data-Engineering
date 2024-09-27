@@ -22,14 +22,14 @@ def gpt4all():
         'Meta-Llama-3.1-8B-Instruct.Q4_0.gguf',  # model_name_7
         'Meta-Llama-3.1-8B-Instruct-Q6_K.gguf',  # model_name_8
         'Mistral-7B-Instruct-v0.3-Q6_K.gguf',  # model_name_9 (Server)
-        'Qwen2.5-32B-Instruct-Q3_K_M.gguf',     # model_name_10 (Server)
-        'Qwen2.5-14B-Instruct-Q8_0.gguf',        # model_name_11 (Server)
-        'Phi-3-medium-4k-instruct-Q6_K.gguf',    # model_name_12 (Server)
+        'Qwen2.5-14B-Instruct-IQ3_M.gguf',     # model_name_10 (Server)
+        'Qwen2.5-7B-Instruct-Q6_K_L.gguf',     # model_name_11 (Server)
+        'Phi-3.5-mini-instruct-Q6_K.gguf',     # model_name_12 (Server)
         'Meta-Llama-3.1-8B-Instruct-Q6_K.gguf',  # model_name_13 (Server)
-        'gemma-2-27b-it-Q4_K_M.gguf'            # model_name_14 (Server)
+        'gemma-2-9b-it-Q5_K_M.gguf'            # model_name_14 (Server)
 
     ]
-    model_name = model_names[13]
+    model_name = model_names[10]
 
     try:
         model_number = int(sys.argv[1])
@@ -64,9 +64,9 @@ def gpt4all():
     start_time = timer()
 
     value_correction_error_reference_data(model, prompts, responses, sample_solutions)
-    #value_correction_error_transformation(model, prompts, responses, sample_solutions)
-    #schema_matching(model, prompts, responses, sample_solutions)
-    #entity_matching(model, prompts, responses, sample_solutions)
+    value_correction_error_transformation(model, prompts, responses, sample_solutions)
+    schema_matching(model, prompts, responses, sample_solutions)
+    entity_matching(model, prompts, responses, sample_solutions)
 
     test_time = round(timer() - start_time, 2)
     print(test_time)
@@ -77,7 +77,7 @@ def gpt4all():
 def value_correction_error_reference_data(model, prompts, responses, sample_solutions):
     obj = fehlerkorrektur()
     result = 0
-    for i in range(0, 5): #40
+    for i in range(0, 40):
         prompt = ("You are a data cleaning machine that returns a correction, which is a single expression.\n"
                   "If you do not find a correction, you return the token<NULL>.\n"
                   "You always follow the example."
@@ -153,6 +153,9 @@ def value_correction_error_transformation(model, prompts, responses, sample_solu
 def schema_matching(model, prompts, responses, sample_solutions):
     obj = schema_matching2()
     result = 0
+    true_positive = 0
+    false_positive = 0
+    false_negative = 0
     for i in range(0, 50):
         prompt = ("You are a data schema matching machine that check if two columns match.\n"
                   "Respond only with <yes> if they match, or <no> if they do not.\n"
@@ -181,17 +184,26 @@ def schema_matching(model, prompts, responses, sample_solutions):
         if obj.data_solution[i] in text:
             print("richtig")
             result = result + 1
+            if obj.data_solution[i] == 'yes':
+                true_positive = true_positive + 1
         else:
             print("falsch")
+            if obj.data_solution[i] == 'yes':
+                false_negative = false_negative + 1
+            else:
+                false_positive = false_positive + 1
         prompts.append(prompt)
         responses.append(response[0])
-        sample_solutions.append(f"{obj.data_solution[i]}\n{result} von {i + 1} richtig")
+        sample_solutions.append(f"{obj.data_solution[i]}\n{result} von {i + 1} richtig\ntrue_positive = {true_positive} | false_positive = {false_positive} | false_negative = {false_negative}")
         print(f"{obj.data_solution[i]}\n{result} von {i + 1} richtig")
 
 
 def entity_matching(model, prompts, responses, sample_solutions):
     obj = entity_matching2()
     result = 0
+    true_positive = 0
+    false_positive = 0
+    false_negative = 0
     for i in range(0, 120):
         prompt = ("You are a data entity matching machine that check if two rows match.\n"
                   "Respond only with <yes> if they match, or <no> if they do not.\n"
@@ -220,11 +232,17 @@ def entity_matching(model, prompts, responses, sample_solutions):
         if obj.data_solution[i] in text:
             print("richtig")
             result = result + 1
+            if obj.data_solution[i] == 'yes':
+                true_positive = true_positive + 1
         else:
             print("falsch")
+            if obj.data_solution[i] == 'yes':
+                false_negative = false_negative + 1
+            else:
+                false_positive = false_positive + 1
         prompts.append(prompt)
         responses.append(response[0])
-        sample_solutions.append(f"{obj.data_solution[i]}\n{result} von {i + 1} richtig")
+        sample_solutions.append(f"{obj.data_solution[i]}\n{result} von {i + 1} richtig\ntrue_positive = {true_positive} | false_positive = {false_positive} | false_negative = {false_negative}")
         print(f"{obj.data_solution[i]}\n{result} von {i + 1} richtig")
 
 

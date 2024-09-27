@@ -1,0 +1,57 @@
+aid(2,3,4);authorid(0,1,2,3);yes
+name(alice doe,bob smith,eve smith);age(60,68,42);no
+IDC(1,2,1,2,1);C(1x,2x,1x,2x,1x);yes
+Department(Computer Science,History,Biology,Chemistry,History);Department(C S,H,B,C,H);yes
+name(AlgoDat,Programming,Java);titel(Programmierung,JavaFuerDummies);yes
+genre(CS,CS,CS);numPages(203,494);no
+BookID(1,2,3,1);BorrowerID(1001,1002,1003,1001);no
+dob(04-03-66,11/1/1934,20.2.03,14-01-1960);dob(4.3.1966,11/01/34,20/02/2003);yes
+BorrowerID(1001,1002,1003,1001);BorrowerName(John Doe,Jane Smith,Bob Johnson,John Doe);no
+fid(0,1,2,3,4,6,7,8);famous(1,0,1,0,0,1,1,1);no
+IDB(1,2,1,2,1);IDF(1,2,1,2,1);no
+name(tim doe,eve evil,bob b.,a. author);full_name(john doe,jane doe,eve evil);yes
+username(42,bb,123,a6);name(tim smith,bob evil,alice doe,john smith);no
+IDA(1,2,1,2,3);A(x1,x2,x1,x2,x3);yes
+IDE(1,2,1,2,1);E(1,2,1,2,1);yes
+Grade(A,B+,A-,B,A+,B,A+,A-,C);G(14,12,13,11,15,11,15,13,8);yes
+Major(Biology,Computer Science,History,Biology,Chemistry);Department(Biology,Computer Science,History,Biology,Chemistry);no
+CourseID(701,702,703,701,704);ProfessorID(701,702,703,701,704);no		
+StudentName(Alice Brown,Bob Johnson,Carol White,David Green);Name(Alice Brown,Bob Johnson,Carol White,David Green);yes
+CourseName(Cell Biology,Algorithms,World History,Organic Chemistry);Department(Biology,Computer Science,History,Chemistry);no
+StudentID(3583042,3583043,3583044,3583045);StudentID(3583042,3583043,3583044,3583045);yes
+StudentID(3583042,3583041,3583040,3583039);StudentName(Alice Brown,Bob Johnson,Carol White,David Green);no
+Title(The Great Gatsby,To Kill a Mockingbird,The Catcher in the Rye);Name(The Great Gatsby,To Kill a Mockingbird,The Catcher in the Rye);yes
+BorrowerName(John Doe,Jane Smith,Bob Johnson,John Doe);BName(JD,JS,BJ,JD);yes
+DueDate(2024-02-15,2024-03-05,2024-02-20);Date(2024-02-15,2024-03-05,2024-02-20);yes
+Title(The Great Gatsby,To Kill a Mockingbird,The Catcher in the Rye);BookID(1,2,1,3);no
+Price(1200,800,100,1100,150);Price(1200,800,100,1100);yes
+CustomerName(Mary Johnson,Robert Smith,Emily Brown,David White);ProductName(Laptop,Refrigerator,Running Shoes,Laptop);no
+CustomerName(Mary Johnson,Robert Smith,Emily Brown,David White);CName(xMary Johnson,xRobert Smith,xEmily Brown,xDavid White);yes
+Product(Laptop,Refrigerator,Running Shoes,Laptop);Manufacturer(HP,Samsung,Nike,HP);no
+CustomerID(2001,2002,2003,2004,2005);CID(1,2,3,4,5);yes
+A(x30,x45,x28,x35);PID(x601,x602,x603,x604);no
+city(Erfurt, Marburg, Niederham, Dresden);Stadt(Erfurt, Marburg, Niederham, Dresden);yes
+Manufacturer(HP,Samsung,Nike,HP,Philips);M(HP,Samsung,Nike,HP,Philips);yes
+Manufacturer(HP,Samsung,Nike,Philips);Category(Electronics,Appliances,Footwear,Appliances);no
+Salary(60000,70000,60000,80000);Salary(6,7,6,8);yes
+EmployeeName(John Doe,Jane Smith,Bob Johnson,Alice Brown);ProjectManager(Sarah Johnson,Mark Thompson,Emily Davis,Sarah Johnson);no
+EmployeeName(John Doe,Jane Smith,Bob Johnson,Alice Brown);EmployeeName(Sarah Johnson,Mark Thompson,Emily Davis,Alex Wilson);yes
+EmployeeID(1001,1002,1003);ProjectID(501,502,503);no
+ManagerRoom(23,12,2,10);ManagerRoom(23,12,2,10);yes
+EmployeeName(John Doe,Jane Smith,Bob Johnson,Alice Brown);ProjectName(Employee Records,Website Redesign,Employee Records,Mobile App Launch);no
+fname(Aria,Annette,Ann,Anabela,Carlos,Carine,Daniel,Diego,Elizabeth,Francisco);podijzmh(Aria,Annette,Ann,Anabela,Carlos,Carine,Daniel,Diego,Elizabeth,Francisco);yes
+job_id(10,6,3,8,5);job_lvl(87,152,200,100,211);no
+hire_date(1991-10-26 00:00:00,1990-02-21 00:00:00,1991-07-16 00:00:00,1993-01-27 00:00:00);hire(1991-10-26 00:00:00,1990-02-21 00:00:00,1991-07-16 00:00:00,1993-01-27 00:00:00);yes
+emp_id(A-C71970F,A-R89858F,AMD15433F,ARD36773F);pub_id(1389,9999,9952,0877);no
+genderLabel(male,male,male,female);genderType(m,m,m,f);yes
+city(Long Beach,Lubbock,Downey,New Orleans);familyName(Broadus,Holley,Yankovic,Armstrong);no
+motherName(Luisa Smith, Vivi Della, Leni Becker, Miriam Shapiro); fatherName(Theo Otto, Milan Presley, Paul Dietrich, Elias Hansen);no
+motherName(Luisa Smith, Vivi Della, Leni Becker, Miriam Shapiro);familyName(Broadus,Holley,Yankovic,Armstrong);no
+musicianLabel(Snoop Dogg,Tom DeLonge,Kurdt Kobain,Barbra Streisand);familyName(Broadus,Holley,Yankovic,Armstrong);no
+musicianLabel(Snoop Dogg,Tom DeLonge,Kurdt Kobain,Barbra Streisand);musicianName(Bigg Snoop Dogg,Ava DeLonge,Kurt Cobain,Barbara Joan Streisand);yes
+forename(Cordozar,Hardin,Alfred,Louis);familyName(Broadus,Holley,Yankovic,Armstrong);no
+forename(Cordozar,Hardin,Alfred,Louis);givenNameLabel(Cordozar,Hardin,Alfred,Louis);yes
+kind(African-American music,rock and roll,humor,popular music);genreLabel(West Coast hip hop,beat music,nerdcore,jazz);yes
+ethnicity(African Americans,French Canadian,White American,Jewish people);religionLabel(Baptists,Christianity,Scientology,Judaism);no
+religionLabel(Baptists,Christianity,Scientology,Judaism); fatherName(Theo Otto, Milan Presley, Paul Dietrich, Elias Hansen);no
+ethnicity(African Americans,French Canadian,White American,Jewish people);genreLabel(West Coast hip hop,beat music,nerdcore,jazz);no	   	
